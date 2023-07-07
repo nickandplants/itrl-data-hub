@@ -5,6 +5,14 @@ date,Date Created,,,DCTERMS.date,dateCreated
 description,Description,,,DCTERMS.description,description
 subject,Subjects,true,,DCTERMS.subject,keywords
 location,Location,,,,contentLocation
+species, Species,,,,
+indigland, Indigenous Land Ownership,,,,
+municipality, Municipality,,,,
+elevation, Elevation (m),,,,
+series, Number of Samples in Series,,,,
+initial, Start Year of Chronology,,,,
+final, Final Year of Chronology,,,,
+avgage, Average Age in Series,,,,
 latitude,Latitude,,,,
 longitude,Longitude,,,,
 source,Source,,,,
