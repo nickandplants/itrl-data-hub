@@ -12,7 +12,7 @@ credits: true
 
 {% include feature/nav-menu.html sections="About CollectionBuilder CSV;About the About Page" %}
 
-{% include cone.html %}
+{% include feature/pine.html %}
 
 
 ## About CollectionBuilder CSV
