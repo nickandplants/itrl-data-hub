@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serotinous Pine Cone</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image</title>
+    <style>
+        #tooltip {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="pine-cone">
-    <div class="scale" id="scale1"></div>
-    <div class="scale" id="scale2"></div>
-    <!-- Add more scales as needed -->
-  </div>
-  <script src="script.js"></script>
+    <img src="objects/itrl_002.jpg" usemap="#image-map" />
+    <map name="image-map">
+        <area shape="rect" coords="50,50,200,150" alt="Description" href="#link1" />
+        <!-- Add more areas as needed -->
+    </map>
+
+    <div id="tooltip"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var areas = document.getElementsByTagName('area');
+            for (var i = 0; i < areas.length; i++) {
+                areas[i].addEventListener('mouseover', function(event) {
+                    // Show tooltip or perform other actions
+                    var tooltip = document.getElementById('tooltip');
+                    tooltip.innerHTML = event.target.alt;
+                    tooltip.style.display = 'block';
+                    tooltip.style.left = event.pageX + 'px';
+                    tooltip.style.top = event.pageY + 'px';
+                });
+                areas[i].addEventListener('mouseout', function() {
+                    // Hide tooltip or revert other actions
+                    var tooltip = document.getElementById('tooltip');
+                    tooltip.style.display = 'none';
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
