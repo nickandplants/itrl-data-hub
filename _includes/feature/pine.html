@@ -17,9 +17,7 @@
 </head>
 
 <body>
-    <div class="center-image">
-        <img src="objects/itrl_002.jpg" usemap="#image-map" width="20%" height="20%" />
-    </div>
+    <img src="objects/itrl_002.jpg" usemap="#image-map" />
     <map name="image-map">
         <area shape="rect" coords="50,50,200,150" alt="Description" href="#link1" />
         <!-- Add more areas as needed -->
@@ -38,16 +36,19 @@
                     tooltip.style.display = 'block';
                     tooltip.style.left = event.pageX + 'px';
                     tooltip.style.top = event.pageY + 'px';
+
+                    // Highlight the area (rectangle) when hovering over it
+                    event.target.style.outline = '2px solid red'; // You can customize the outline color and width
                 });
-                areas[i].addEventListener('mouseout', function() {
-                    // Hide tooltip or revert other actions
+                areas[i].addEventListener('mouseout', function(event) {
+                    // Hide tooltip, revert other actions, and remove highlight
                     var tooltip = document.getElementById('tooltip');
                     tooltip.style.display = 'none';
+                    event.target.style.outline = 'none';
                 });
             }
         });
     </script>
 </body>
-
 
 </html>
